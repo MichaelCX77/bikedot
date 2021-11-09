@@ -9,18 +9,18 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mcx</groupId>
-	<artifactId>bikedot-eureka-server</artifactId>
+	<artifactId>bikedot-config-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bikedot-eureka-server</name>
-	<description>Eureka Server</description>
+	<name>bikedot-config-server</name>
+	<description>Config Server</description>
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+		<spring-cloud.version>2020.0.4</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
 		<dependency>
