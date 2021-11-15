@@ -13,3 +13,16 @@ eureka:
       defaultZone: 'http://localhost:8761/eureka'
 
 management:  endpoints:    web:      exposure:        include: '*'
+zuul:  routes:    oauth:
+      service-id: 'bikedot-oauth'
+      path: '/bikedot-oauth/**'
+      sensitive-headers:      - Cookie
+      - Set-Cookie
+      
+    register:
+      service-id: 'bikedot-register'
+      path: '/bikedot-register/**'
+      
+    payment:
+      service-id: 'bikedot-payment'
+      path: '/bikedot-payment/**'

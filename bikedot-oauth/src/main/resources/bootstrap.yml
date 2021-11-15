@@ -1,9 +1,13 @@
 spring:
   application:
     name: 'bikedot-oauth'
-    
+  cloud:
+    config:
+      uri: 'http://localhost:8888'
+      
 server:
   port: ${PORT:0}
+  
 eureka:
   client:
     service-url:

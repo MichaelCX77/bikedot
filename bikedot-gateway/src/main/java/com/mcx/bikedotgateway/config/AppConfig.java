@@ -23,8 +23,6 @@ public class AppConfig {
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
 		tokenConverter.setSigningKey(jwtSecret);
 		
-		System.out.println("TESTEEE = " + teste);
-		
 		return tokenConverter;
 		
 	}

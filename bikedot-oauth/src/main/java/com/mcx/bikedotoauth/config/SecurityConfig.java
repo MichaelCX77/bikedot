@@ -1,4 +1,4 @@
-package com.mcx.bikedotoauthconfig;
+package com.mcx.bikedotoauth.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

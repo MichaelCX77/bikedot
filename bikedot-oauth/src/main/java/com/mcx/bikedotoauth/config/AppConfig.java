@@ -1,4 +1,4 @@
-package com.mcx.bikedotoauthconfig;
+package com.mcx.bikedotoauth.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
