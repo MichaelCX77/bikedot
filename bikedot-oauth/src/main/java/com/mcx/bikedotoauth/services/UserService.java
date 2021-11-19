@@ -22,7 +22,7 @@ public class UserService implements UserDetailsService {
 		if(user == null) {
 			throw new UsernameNotFoundException("Email not found");
 		}
-
+	
 		return user;
 	}
 	
