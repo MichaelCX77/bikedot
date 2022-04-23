@@ -49,9 +49,12 @@ public class ResourceServer extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 
+		// hasRole - tem que ter a role
+		// hasAnyRole - tem que ter ao menos uma das roles
+		
 		http.authorizeRequests()
 		.antMatchers(URL_PUBLIC).permitAll()
-		.antMatchers(HttpMethod.GET, URL_USER).hasAnyRole("USER","ADMIN")
+		.antMatchers(HttpMethod.GET, URL_USER).hasRole("USER")
 		.antMatchers(URL_ADMIN).hasRole("ADMIN")
 		.anyRequest().authenticated();
 		
@@ -76,7 +79,8 @@ public class ResourceServer extends ResourceServerConfigurerAdapter {
 	@Bean
 	public FilterRegistrationBean<CorsFilter> corsFilter() {
 		
-		FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>(new CorsFilter(corsConfigurationSource()));
+		FilterRegistrationBean<CorsFilter> bean
+		= new FilterRegistrationBean<>(new CorsFilter(corsConfigurationSource()));
 		
 		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
 		return bean;
