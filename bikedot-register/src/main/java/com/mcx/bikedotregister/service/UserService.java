@@ -46,6 +46,20 @@ public class UserService {
 			throw new ConstraintViolationException("Email já existe",null);
 		}
 	}
+	
+	public User update(User user) {
+		
+		user.setPassword(bcryptEncoder.encode(user.getPassword()));
+		
+		User userDb = repository.findById(user.getId()).get();
+		userDb.updateUser(user);
+		
+		try {
+			return repository.save(userDb);
+		} catch (ConstraintViolationException e) {
+			throw new ConstraintViolationException("Email já existe",null);
+		}
+	}
 
 	public void delete(Long id) {
 		

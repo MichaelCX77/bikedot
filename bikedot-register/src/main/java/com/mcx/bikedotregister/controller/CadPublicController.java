@@ -23,7 +23,8 @@ public class CadPublicController {
 			return ResponseEntity.badRequest().build();
 		}
 		
+		user.setId(null);
 		return ResponseEntity.ok(service.save(user));
 		
-	}	
+	}
 }

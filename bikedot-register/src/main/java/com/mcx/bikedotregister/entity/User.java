@@ -21,7 +21,7 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String name;
 	
 	@Column(unique = true)
@@ -76,5 +76,14 @@ public class User implements Serializable {
 	public Set<Role> getRoles() {
 		return roles;
 	}
-
+	
+	public User updateUser(User user) {
+		
+		this.email = user.getEmail();
+		this.name = user.getName();
+		this.password = user.getPassword();
+		
+		return this;
+	}
+	
 }
