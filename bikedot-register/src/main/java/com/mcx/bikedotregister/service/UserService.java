@@ -2,7 +2,10 @@ package com.mcx.bikedotregister.service;
 
 import java.util.List;
 
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.mcx.bikedotregister.entity.User;
@@ -11,6 +14,9 @@ import com.mcx.bikedotregister.repository.UserRepository;
 @Service
 public class UserService {
 
+	@Autowired
+	BCryptPasswordEncoder bcryptEncoder;
+	
 	@Autowired
 	private UserRepository repository;
 	
@@ -29,5 +35,22 @@ public class UserService {
 	public List<User> findAll() {
 		return repository.findAll();
 	}
+	
+	public User save(User user) {
+		
+		user.setPassword(bcryptEncoder.encode(user.getPassword()));
+		
+		try {
+			return repository.save(user);
+		} catch (ConstraintViolationException e) {
+			throw new ConstraintViolationException("Email já existe",null);
+		}
+	}
 
+	public void delete(Long id) {
+		
+		repository.delete(repository.findById(id).get());
+		
+	}
+	
 }

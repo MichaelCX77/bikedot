@@ -2,10 +2,14 @@ package com.mcx.bikedotregister.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +32,6 @@ public class UserController {
 		return ResponseEntity.ok(users);
 	}
 	
-	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<User> getUserById (@PathVariable Long id){
 		
@@ -41,6 +44,14 @@ public class UserController {
 		
 		User user = service.findByEmail(email);
 		return ResponseEntity.ok(user);
+	}
+	
+	@DeleteMapping(value = "/delete/{id}")
+	public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+		
+		service.delete(id);
+		
+		return ResponseEntity.ok().body(null);
 	}
 	
 }
