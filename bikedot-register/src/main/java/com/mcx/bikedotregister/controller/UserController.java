@@ -52,7 +52,7 @@ public class UserController {
 		
 		service.delete(id);
 		
-		return ResponseEntity.ok().body(null);
+		return ResponseEntity.ok(null);
 	}
 	
 	@PostMapping(value ="/update")

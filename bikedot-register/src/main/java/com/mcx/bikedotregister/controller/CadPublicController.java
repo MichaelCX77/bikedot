@@ -10,7 +10,7 @@ import com.mcx.bikedotregister.entity.User;
 import com.mcx.bikedotregister.service.UserService;
 
 @RestController
-@RequestMapping(value = "/create")
+@RequestMapping(value = "/pub/create")
 public class CadPublicController {
 
 	@Autowired
