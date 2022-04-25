@@ -35,10 +35,13 @@ public class ResourceServer extends ResourceServerConfigurerAdapter {
 				"/bikedot-oauth/oauth/token",
 				"/bikedot-register/pub/**"
 				};
+		
 		URL_USER = new String[]{ 
 				"/bikedot-reserve/**", 
-				"/bikedot-payment/**"
+				"/bikedot-payment/**",
+				"/bikedot-catalog/**"
 				};
+		
 		URL_ADMIN = new String[]{ 
 				"/bikedot-register/users/**",
 				"/bikedot-register/roles/**" 
