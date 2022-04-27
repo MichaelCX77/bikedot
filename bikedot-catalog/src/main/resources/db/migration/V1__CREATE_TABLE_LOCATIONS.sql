@@ -1,1 +1,0 @@
-create table locations (code varchar(255) not null, cep integer, logradouro varchar(255), complemento varchar(255), bairro varchar(255), localidade varchar(255), uf varchar(255), ibge integer, gia integer, ddd integer, siafi varchar(255), numero integer, data_cadastro date, vagas integer, primary key (code));

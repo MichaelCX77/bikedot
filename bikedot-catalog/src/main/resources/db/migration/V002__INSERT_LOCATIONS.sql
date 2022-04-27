@@ -12,7 +12,8 @@ INSERT INTO locations values (
             '6789' ,
             '488' ,
             '22-04-25' ,
-            '11');
+            '11',
+             1);
 INSERT INTO locations values ( 
             '05154100SP1547' , 
             '05154100' ,
@@ -27,7 +28,8 @@ INSERT INTO locations values (
             '7107' ,
             '1547' ,
             '22-04-25' ,
-            '1');
+            '1',
+             1);
 INSERT INTO locations values ( 
             '29169725ES981' , 
             '29169725' ,
@@ -42,7 +44,8 @@ INSERT INTO locations values (
             '5699' ,
             '981' ,
             '22-04-25' ,
-            '6');
+            '6',
+             1);
 INSERT INTO locations values ( 
             '18683751SP2922' , 
             '18683751' ,
@@ -57,7 +60,8 @@ INSERT INTO locations values (
             '6637' ,
             '2922' ,
             '22-04-25' ,
-            '13');
+            '13',
+             1);
 INSERT INTO locations values ( 
             '11720160SP2145' , 
             '11720160' ,
@@ -72,7 +76,8 @@ INSERT INTO locations values (
             '6921' ,
             '2145' ,
             '22-04-25' ,
-            '8');
+            '8',
+             1);
 INSERT INTO locations values ( 
             '13060129SP2620' , 
             '13060129' ,
@@ -87,7 +92,8 @@ INSERT INTO locations values (
             '6291' ,
             '2620' ,
             '22-04-25' ,
-            '1');
+            '1',
+             1);
 INSERT INTO locations values ( 
             '04154100SP28' , 
             '04154100' ,
@@ -102,7 +108,8 @@ INSERT INTO locations values (
             '7107' ,
             '28' ,
             '22-04-25' ,
-            '4');
+            '4',
+             1);
 INSERT INTO locations values ( 
             '13483528SP1660' , 
             '13483528' ,
@@ -117,7 +124,8 @@ INSERT INTO locations values (
             '6639' ,
             '1660' ,
             '22-04-25' ,
-            '10');
+            '10',
+             1);
 INSERT INTO locations values ( 
             '08576310SP1061' , 
             '08576310' ,
@@ -132,7 +140,8 @@ INSERT INTO locations values (
             '6563' ,
             '1061' ,
             '22-04-25' ,
-            '4');
+            '4',
+             1);
 INSERT INTO locations values ( 
             '09672000SP210' , 
             '09672000' ,
@@ -147,4 +156,5 @@ INSERT INTO locations values (
             '7075' ,
             '210' ,
             '22-04-25' ,
-            '7');
+            '7',
+             1);

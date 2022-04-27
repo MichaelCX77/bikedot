@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Locations implements Serializable{
@@ -39,6 +42,10 @@ public class Locations implements Serializable{
 	private Date dataCadastro;
 	
 	private Integer vagas;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(referencedColumnName = "id")
+	private Carrier carrier;
 	
 	public Locations() {
 		super();
@@ -178,12 +185,20 @@ public class Locations implements Serializable{
 		this.vagas = vagas;
 	}
 
+	public Carrier getCarrier() {
+		return carrier;
+	}
+
+	public void setCarrier(Carrier carrier) {
+		this.carrier = carrier;
+	}
+
 	@Override
 	public String toString() {
-		return "Terminal [code=" + code + ", cep=" + cep + ", logradouro=" + logradouro + ", complemento=" + complemento
-				+ ", bairro=" + bairro + ", localidade=" + localidade + ", uf=" + uf + ", ibge=" + ibge + ", gia=" + gia
-				+ ", ddd=" + ddd + ", siafi=" + siafi + ", numero=" + numero + ", dataCadastro=" + dataCadastro
-				+ ", vagas=" + vagas + "]";
+		return "Locations [code=" + code + ", cep=" + cep + ", logradouro=" + logradouro + ", complemento="
+				+ complemento + ", bairro=" + bairro + ", localidade=" + localidade + ", uf=" + uf + ", ibge=" + ibge
+				+ ", gia=" + gia + ", ddd=" + ddd + ", siafi=" + siafi + ", numero=" + numero + ", dataCadastro="
+				+ dataCadastro + ", vagas=" + vagas + ", carrier=" + carrier + "]";
 	}
 	
 }

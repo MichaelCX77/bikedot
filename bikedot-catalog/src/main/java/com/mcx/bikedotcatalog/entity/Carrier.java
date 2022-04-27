@@ -25,15 +25,18 @@ public class Carrier implements Serializable {
 	
 	private String description;
 	
+	private String refrence;
+	
 	public Carrier() {
 		super();
 	}
 
-	public Carrier(Long id, CarrierType type, String description) {
+	public Carrier(Long id, CarrierType type, String description, String refrence) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.description = description;
+		this.refrence = refrence;
 	}
 
 	public Long getId() {
@@ -60,9 +63,16 @@ public class Carrier implements Serializable {
 		this.description = description;
 	}
 
-	@Override
-	public String toString() {
-		return "Portador [id=" + id + ", type=" + type + ", description=" + description + "]";
+	public String getRefrence() {
+		return refrence;
 	}
 
+	public void setRefrence(String refrence) {
+		this.refrence = refrence;
+	}
+
+	@Override
+	public String toString() {
+		return "Carrier [id=" + id + ", type=" + type + ", description=" + description + ", refrence=" + refrence + "]";
+	}
 }
