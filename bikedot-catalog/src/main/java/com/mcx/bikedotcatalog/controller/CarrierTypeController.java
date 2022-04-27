@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mcx.bikedotcatalog.entity.Carrier;
-import com.mcx.bikedotcatalog.service.CarrierService;
+import com.mcx.bikedotcatalog.entity.CarrierType;
+import com.mcx.bikedotcatalog.service.CarrierTypeService;
 
 @RestController
-@RequestMapping(value = "/carriers")
-public class CarrrierController {
+@RequestMapping(value = "/carriertype")
+public class CarrierTypeController {
 
 	@Autowired
-	private CarrierService service;
+	private CarrierTypeService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Carrier>> getAllCarries(){
+	public ResponseEntity<List<CarrierType>> getAllCarries(){
 		
 		return ResponseEntity.ok().body(service.findAll());
 		
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Carrier> getCarrie(@PathVariable Long id){
+	public ResponseEntity<CarrierType> getCarrie(@PathVariable Long id){
 		
 		return ResponseEntity.ok().body(service.findById(id));
 		

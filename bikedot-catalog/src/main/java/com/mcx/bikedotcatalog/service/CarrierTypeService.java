@@ -5,20 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mcx.bikedotcatalog.entity.Carrier;
-import com.mcx.bikedotcatalog.repository.CarriersRepository;
+import com.mcx.bikedotcatalog.entity.CarrierType;
+import com.mcx.bikedotcatalog.repository.CarrierTypeRepository;
 
 @Service
-public class CarriersService {
+public class CarrierTypeService {
 
 	@Autowired
-	private CarriersRepository repository;
+	private CarrierTypeRepository repository;
 	
-	public List<Carrier> findAll(){
+	public List<CarrierType> findAll(){
 		return repository.findAll();
 	}
 	
-	public Carrier findById(Long id){
+	public CarrierType findById(Long id){
 		return repository.findById(id).get();
 	}
 	
